@@ -93,24 +93,12 @@
 
     const post = { nome, categoria, titulo, descricao, localidade, dataEnvio };
 
-    fetch('https://ecotintas-backend.onrender.com/sugestao', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(post)
-    })
-    .then(response => {
-      if (!response.ok) throw new Error("Falha ao enviar");
-      return response.json();
-    })
-    .then(data => {
-      renderPost(post);
-      document.getElementById('formMural').reset();
-      alert("Contribuição enviada com sucesso!");
-    })
-    .catch(error => {
-      console.error("Erro:", error);
-      alert("Erro ao enviar contribuição. Tente novamente mais tarde.");
-    });
+    const mural = JSON.parse(localStorage.getItem('mural') || '[]');
+    mural.push(post);
+    localStorage.setItem('mural', JSON.stringify(mural));
+
+    renderPost(post);
+    document.getElementById('formMural').reset();
   }
 
   function renderPost(post) {
