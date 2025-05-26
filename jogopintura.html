@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -6,8 +5,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <link rel="stylesheet" href="assets/css/main.css"/>
-    
-<style>
+        <style>
 @keyframes pulse {
     0% { transform: scale(1); color: #21c189; }
     50% { transform: scale(1.3); color: #1e8d6d; }
@@ -17,8 +15,7 @@
     animation: pulse 0.5s ease;
 }
 </style>
-
-</head>
+    </head>
     <body>
         <div id="page-wrapper">
             <!-- Header -->
@@ -27,60 +24,49 @@
                     <div class="row">
                         <div class="col-12">
                             <header id="header">
-                                <h1><a href="index.html" id="logo">EcoTintas</a></h1>
+                                <h1><a href="index.html" id="logo">Ecotintas</a></h1> 
                                 <nav id="nav">
                                     <a href="index.html">Página Inicial</a>
-                                    <a href="iniciativas.html">Iniciativas</a>
-                                    <a href="onecolumn.html">Galeria</a>
-                                    <a href="jogopintura.html">Jogo</a>
+                                    <a href="iniciativas.html">Iniciativas</a> <a href="onecolumn.html" class="current-page-item">Galeria</a> <a href="jogopintura.html">Jogo</a> <a href="formulario.html">Formulario</a> 
                                 </nav>
                             </header>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Main -->
             <div id="main">
                 <div class="container">
                     <section id="jogo-pintura">
                         <h2>🎨 Jogo da Pintura Sustentável</h2>
                         <p>Escolha uma cor e clique na parede para pintá-la. Ao terminar, clique em "Finalizar Pintura" para descobrir como devolver e reutilizar os galões de tinta.</p>
-
                         <div style="display: flex; flex-direction: column; align-items: center;">
-                            
-<div style="margin: 20px 0;">
-    <label for="imagemFundo">Escolha uma imagem para pintar:</label>
-    <select id="imagemFundo" onchange="carregarImagem()">
-        <option value="casa">🏡 Casa no Campo com Sol</option>
-        <option value="predio">🏢 Prédio Corporativo</option>
-        <option value="faculdade">🏫 Faculdade Mackenzie</option>
-    </select>
-</div>
-
-<canvas id="canvasPintura" width="500" height="300" style="border: 2px solid #ccc; background-color: #f5f5f5; margin-bottom: 10px;"></canvas>
-
+                            <div style="margin: 20px 0;">
+                                <label for="imagemFundo">Escolha uma imagem para pintar:</label>
+                                <select id="imagemFundo" onchange="carregarImagem()">
+                                    <option value="casa">🏡 Casa no Campo com Sol</option>
+                                    <option value="predio">🏢 Prédio Corporativo</option>
+                                    <option value="faculdade">🏫 Faculdade Mackenzie</option>
+                                </select>
+                            </div>
+                            <canvas id="canvasPintura" width="500" height="300" style="border: 2px solid #ccc; background-color: #f5f5f5; margin-bottom: 10px;"></canvas>
                             <label for="corTinta">Escolha a cor da tinta:</label>
                             <input type="color" id="corTinta" value="#21c189" style="margin: 10px;"/>
-
                             <button onclick="finalizarPintura()" style="background-color:#21c189;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Finalizar Pintura</button>
-
-<div style="margin: 10px 0;">
-    <label for="tamanhoPincel">Tamanho do pincel:</label>
-    <input type="range" id="tamanhoPincel" min="5" max="40" value="20" style="vertical-align: middle;">
-</div>
-
-<div style="margin-top: 15px; font-weight: bold;">
-    Pontuação: <span id="pontuacao">0</span> pontos
-</div>
-
+                            <div style="margin: 10px 0;">
+                                <label for="tamanhoPincel">Tamanho do pincel:</label>
+                                <input type="range" id="tamanhoPincel" min="5" max="40" value="20" style="vertical-align: middle;">
+                            </div>
+                            <div style="margin-top: 15px; font-weight: bold;">
+                                Pontuação: <span id="pontuacao">0</span> pontos
+                            </div>
                         </div>
-
                         <div id="infoReutilizacao" style="margin-top: 20px; display:none; background: #e6f5ec; padding: 15px; border-radius: 10px;">
                             <h3>♻️ Como Reutilizar ou Devolver os Galões de Tinta?</h3>
                             <ul>
                                 <li>Leve os galões vazios aos pontos de coleta parceiros, como lojas de tinta certificadas.</li>
-                                <li>Verifique se há programas como o <strong>Suvinil Circula</strong> na sua região.</li>
+                                <li>Verifique se há programas como o <strong>Suvinil Circula</strong> na sua região.
+                                </li>
                                 <li>Não descarte galões em lixo comum: eles podem ser reciclados ou reutilizados na produção de novos produtos.</li>
                                 <li>Se restar tinta, armazene em local seco e fechado para uso posterior.</li>
                             </ul>
@@ -89,7 +75,6 @@
                     </section>
                 </div>
             </div>
-
             <!-- Footer -->
             <div id="footer-wrapper" style="background: #1e2e26; color: #f0f0f0; padding: 50px 0;">
                 <div class="container">
@@ -191,8 +176,7 @@
                     </div>
                 </div>
             </div>
-        </div>   
-
+        </div>         
         <!-- Scripts -->
         <script>
             
@@ -259,12 +243,8 @@ window.onload = carregarImagem;
 
 
 </script>
-
-<audio id="trilhaAmbiente" src="https://cdn.pixabay.com/audio/2022/03/31/audio_1830e91f75.mp3" autoplay loop volume="0.2"></audio>
-
-
-<audio id="somClique" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3969e1a558.mp3?filename=click-124467.mp3"></audio>
-<audio id="somFinal" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_877c84c4bb.mp3?filename=success-1-6297.mp3"></audio>
-
+        <audio id="trilhaAmbiente" src="https://cdn.pixabay.com/audio/2022/03/31/audio_1830e91f75.mp3" autoplay loop volume="0.2"></audio>
+        <audio id="somClique" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3969e1a558.mp3?filename=click-124467.mp3"></audio>
+        <audio id="somFinal" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_877c84c4bb.mp3?filename=success-1-6297.mp3"></audio>
     </body>
 </html>

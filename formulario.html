@@ -1,9 +1,4 @@
 <!DOCTYPE HTML> 
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
---> 
 <html> 
     <head> 
         <title>Iniciativas Sustentaveis</title>         
@@ -30,48 +25,17 @@
                 </div>                 
             </div>             
             <!-- Main -->             
-            <style>/* Alinhamento vertical das colunas */.initiative-section .col-6 { display: flex; flex-direction: column; justify-content: center; min-height: 300px; padding: 20px; } /* Ajuste das imagens */.initiative-section .image.fit img { width: 100%; height: auto; max-height: 300px; object-fit: cover; border-radius: 10px; }</style>
             <div id="main">
                 <div class="container">
-                    <div class="row main-row initiative-section">
-                        <!-- Reciclagem -->
-                        <section class="row aln-middle">
-                            <div class="col-6 col-12-medium">
-                                <h2>🌱 Iniciativas Sustentáveis</h2>
-                                <h3>♻️ Reciclagem de Embalagens:</h3>
-                                <p>Através do programa <em>Suvinil Circula</em>, embalagens vazias de tinta e sobras são recolhidas nos pontos de venda parceiros, transportadas por operadores logísticos certificados e encaminhadas para cooperativas de reciclagem. Isso promove a logística reversa e evita o descarte incorreto de resíduos, contribuindo para a economia circular e a redução do impacto ambiental. <br><a href="https://www.basf.com/ar/es/who-we-are/sustainability/sustentabilidad-en-america-del-sul/Sustentabilidad-en-la-Pr-ctica/Hist-rico-de-Casos-de-Sustentabilidad-en-la-Pr-ctica/case-msu-suvinil-circula" target="_blank">[Saiba mais]</a> </p>
-                            </div>
-                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/circula.webp" alt="Reciclagem de embalagens"> </span>
-                            </div>
-                        </section>
-                        <!-- Água -->
-                        <section class="row aln-middle">
-                            <div class="col-6 col-12-medium">
-                                <h3>💧 Redução no Consumo de Água:</h3>
-                                <p>A fábrica da Suvinil em São Bernardo do Campo (SP) implementou melhorias em processos industriais que permitiram reduzir em 29% o consumo de água ao longo de 14 anos. Entre as práticas adotadas estão o reaproveitamento da água de enxágue e tecnologias de produção mais limpas e eficientes. <br><a href="https://www.basf.com/br/pt/who-we-are/sustainability/sustentabilidade-na-america-do-sul/sustentabilidade-na-pratica/2024/O-poder-da-log-stica-reversa-na-sustentabilidade-do-setor-de-tintas-" target="_blank">[Saiba mais]</a> </p>
-                            </div>
-                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/agua.jpg" alt="Redução no consumo de água"> </span>
-                            </div>
-                        </section>
-                        <!-- Resíduos -->
-                        <section class="row aln-middle">
-                            <div class="col-6 col-12-medium">
-                                <h3>🔄 Reaproveitamento de Resíduos:</h3>
-                                <p>Resíduos gerados durante o processo de fabricação, como tintas fora de especificação ou sobras de matérias-primas, são tratados internamente e reprocessados sempre que possível. Essa prática reduz significativamente a geração de lixo industrial e evita o envio para aterros, gerando ganhos ambientais e econômicos.</p>
-                            </div>
-                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/residuo.png" alt="Reaproveitamento de resíduos"> </span>
-                            </div>
-                        </section>
-                        <!-- Energia Renovável -->
-                        <section class="row aln-middle">
-                            <div class="col-6 col-12-medium">
-                                <h3>🔋 Energia Renovável:</h3>
-                                <p>A BASF utiliza certificados de energia renovável (I-REC) para garantir que 100% da eletricidade utilizada em suas fábricas na América do Sul seja proveniente de fontes limpas, como hidrelétricas e eólicas. Isso reduz as emissões de CO₂ associadas à produção e demonstra o compromisso com uma matriz energética sustentável.</p>
-                            </div>
-                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/eolica.webp" alt="Uso de energia renovável"> </span>
-                            </div>
-                        </section>
-                    </div>
+                    <section style="padding: 40px 20px; background-color: #f5f9f3; border-radius: 20px; max-width: 700px; margin: 0 auto; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+                        <h2 style="text-align: center; color: #009451; margin-bottom: 20px;">📬 Envie sua sugestão de ponto de descarte</h2>
+                        <form id="formSugestao" style="display: flex; flex-direction: column; gap: 20px;">
+                            <input type="text" id="nome" placeholder="Seu nome" required style="padding: 10px 15px; font-size: 1em; border: 1px solid #ced4c1; border-radius: 8px;">
+                            <textarea id="mensagem" placeholder="Descreva sua sugestão..." required rows="5" style="padding: 10px 15px; font-size: 1em; border: 1px solid #ced4c1; border-radius: 8px;"></textarea>
+                            <button type="submit" style="padding: 12px 20px; background-color: #009451; color: white; font-size: 1em; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">Enviar Sugestão</button>
+                            <p id="resposta" style="color: green; font-weight: bold; text-align: center;"></p>
+                        </form>
+                    </section>
                 </div>
             </div>
             <!-- Footer -->             
@@ -157,9 +121,7 @@
                         <div class="col-4 col-12-medium">
                             <section>
                                 <h2 style="color: #21c189;">Sobre o EcoTintas</h2>
-                                <p>
-            O EcoTintas é uma plataforma educativa e interativa voltada à conscientização sobre
-            práticas sustentáveis na indústria de tintas. Inspirado por empresas como BASF e Suvinil, o projeto conecta teoria e prática por meio de conteúdos, estudos e experiências reais. </p>
+                                <p>O EcoTintas é uma plataforma educativa e interativa voltada à conscientização sobre práticas sustentáveis na indústria de tintas. Inspirado por empresas como BASF e Suvinil, o projeto conecta teoria e prática por meio de conteúdos, estudos e experiências reais.</p>
                                 <footer class="controls"><a href="#sobre" class="button" style="background-color: #21c189; border: none;">Saiba mais</a>
                                 </footer>
                             </section>
@@ -177,6 +139,28 @@
             </div>
         </div>         
         <!-- Scripts -->         
+        <script>
+          document.getElementById('formSugestao').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            fetch('https://ecotintas-backend.onrender.com/sugestao', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ nome, mensagem })
+            })
+            .then(res => res.json())
+            .then(data => {
+              document.getElementById('resposta').innerText = data.mensagem;
+              document.getElementById('formSugestao').reset();
+            })
+            .catch(error => {
+              document.getElementById('resposta').innerText = "Erro ao enviar sugestão.";
+              console.error('Erro:', error);
+            });
+          });
+        </script>
         <script src="assets/js/jquery.min.js"></script>         
         <script src="assets/js/browser.min.js"></script>         
         <script src="assets/js/breakpoints.min.js"></script>         
