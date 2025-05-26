@@ -77,9 +77,9 @@
                     </section>
                     <script>
   document.addEventListener('DOMContentLoaded', () => {
-  carregarPostagens();
-});
-
+    const postsSalvos = JSON.parse(localStorage.getItem('mural') || '[]');
+    postsSalvos.forEach(post => renderPost(post));
+  });
 
   function adicionarPostagem(event) {
     event.preventDefault();
@@ -125,24 +125,6 @@
     `;
     document.getElementById('mural-postagens').prepend(div);
   }
-  function carregarPostagens() {
-  fetch('https://ecotintas-backend.onrender.com/sugestoes')
-    .then(response => {
-      if (!response.ok) throw new Error("Erro ao buscar postagens");
-      return response.json();
-    })
-    .then(posts => {
-      const mural = document.getElementById('mural-postagens');
-      mural.innerHTML = ''; // Limpa antes de renderizar
-      posts.reverse().forEach(post => renderPost(post));
-    })
-    .catch(error => {
-      console.error("Erro ao carregar mural:", error);
-      const mural = document.getElementById('mural-postagens');
-      mural.innerHTML = "<p style='color:red;'>Erro ao carregar o mural. Tente novamente mais tarde.</p>";
-    });
-}
-
 </script>
                 </div>
             </div>
