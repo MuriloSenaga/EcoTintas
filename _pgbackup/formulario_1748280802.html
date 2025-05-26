@@ -17,7 +17,7 @@
                                 <h1><a href="index.html" id="logo">Ecotintas</a></h1> 
                                 <nav id="nav">
                                     <a href="index.html">Página Inicial</a>
-                                    <a href="iniciativas.html">Iniciativas</a> <a href="onecolumn.html">Galeria</a> <a href="jogopintura.html">Jogo</a> <a href="formulario.html" class="current-page-item">Mural</a> 
+                                    <a href="iniciativas.html">Iniciativas</a> <a href="onecolumn.html">Galeria</a> <a href="jogopintura.html">Jogo</a> <a href="formulario.html" class="current-page-item">Formulario</a> 
                                 </nav>                                 
                             </header>                             
                         </div>                         
@@ -32,7 +32,7 @@
                             <h2 style="color: #009451; font-size: 2em;">🧩 Mural Colaborativo de Práticas Sustentáveis</h2>
                             <p style="font-size: 1.2em; color: #5c5f58;">Compartilhe ações, ideias ou sugestões que promovem o ODS 12 e a sustentabilidade na indústria de tintas.</p>
                         </header>
-                        <form id="formMural" onsubmit="adicionarPostagem(event)" style="max-width: 800px; margin: 0 auto;">
+                        <form method="post" action="mural-processa.php" id="formMural" style="max-width: 800px; margin: 0 auto;">
                             <div class="row gtr-50">
                                 <!-- Nome ou Apelido -->
                                 <div class="col-6 col-12-medium">
@@ -72,48 +72,7 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- Mural exibido após envio -->
-                        <div id="mural-postagens" style="margin-top: 3em;"></div>
                     </section>
-                    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const postsSalvos = JSON.parse(localStorage.getItem('mural') || '[]');
-    postsSalvos.forEach(post => renderPost(post));
-  });
-
-  function adicionarPostagem(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById('nome').value || "Anônimo";
-    const categoria = document.getElementById('categoria').value;
-    const titulo = document.getElementById('titulo').value;
-    const descricao = document.getElementById('descricao').value;
-    const localidade = document.getElementById('localidade').value || "Não informada";
-    const dataEnvio = new Date().toLocaleString('pt-BR');
-
-    const post = { nome, categoria, titulo, descricao, localidade, dataEnvio };
-
-    const mural = JSON.parse(localStorage.getItem('mural') || '[]');
-    mural.push(post);
-    localStorage.setItem('mural', JSON.stringify(mural));
-
-    renderPost(post);
-    document.getElementById('formMural').reset();
-  }
-
-  function renderPost(post) {
-    const div = document.createElement('div');
-    div.style = "background: #ffffff; padding: 1.5em; border-left: 6px solid #009451; margin-bottom: 1.5em; border-radius: 10px;";
-    div.innerHTML = `
-      <h3 style="color:#007b5e;">${post.titulo}</h3>
-      <p><strong>Categoria:</strong> ${post.categoria}</p>
-      <p>${post.descricao}</p>
-      <p><strong>Localidade:</strong> ${post.localidade}</p>
-      <p style="font-size: 0.85em; color: #666;">🗓️ Enviado por <strong>${post.nome}</strong> em ${post.dataEnvio}</p>
-    `;
-    document.getElementById('mural-postagens').prepend(div);
-  }
-</script>
                 </div>
             </div>
             <!-- Footer -->             

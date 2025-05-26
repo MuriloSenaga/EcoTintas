@@ -1,4 +1,9 @@
 <!DOCTYPE HTML> 
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+--> 
 <html> 
     <head> 
         <title>Iniciativas Sustentaveis</title>         
@@ -17,7 +22,7 @@
                                 <h1><a href="index.html" id="logo">Ecotintas</a></h1> 
                                 <nav id="nav">
                                     <a href="index.html">Página Inicial</a>
-                                    <a href="iniciativas.html">Iniciativas</a> <a href="onecolumn.html">Galeria</a> <a href="jogopintura.html">Jogo</a> <a href="formulario.html" class="current-page-item">Mural</a> 
+                                    <a href="iniciativas.html">Iniciativas</a> <a href="onecolumn.html" class="current-page-item">Galeria</a> <a href="jogopintura.html">Jogo</a> <a href="formulario.html">Formulario</a> 
                                 </nav>                                 
                             </header>                             
                         </div>                         
@@ -25,95 +30,48 @@
                 </div>                 
             </div>             
             <!-- Main -->             
+            <style>/* Alinhamento vertical das colunas */.initiative-section .col-6 { display: flex; flex-direction: column; justify-content: center; min-height: 300px; padding: 20px; } /* Ajuste das imagens */.initiative-section .image.fit img { width: 100%; height: auto; max-height: 300px; object-fit: cover; border-radius: 10px; }</style>
             <div id="main">
                 <div class="container">
-                    <section id="mural" class="container" style="background: #f9fdf7; padding: 3em; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-                        <header style="text-align: center; margin-bottom: 2em;">
-                            <h2 style="color: #009451; font-size: 2em;">🧩 Mural Colaborativo de Práticas Sustentáveis</h2>
-                            <p style="font-size: 1.2em; color: #5c5f58;">Compartilhe ações, ideias ou sugestões que promovem o ODS 12 e a sustentabilidade na indústria de tintas.</p>
-                        </header>
-                        <form id="formMural" onsubmit="adicionarPostagem(event)" style="max-width: 800px; margin: 0 auto;">
-                            <div class="row gtr-50">
-                                <!-- Nome ou Apelido -->
-                                <div class="col-6 col-12-medium">
-                                    <label for="nome">Nome ou Apelido (opcional)</label>
-                                    <input type="text" name="nome" id="nome" placeholder="Seu nome ou apelido" style="width: 100%; padding: 0.75em; border-radius: 8px; border: 1px solid #ccc;"/>
-                                </div>
-                                <!-- Categoria -->
-                                <div class="col-6 col-12-medium">
-                                    <label for="categoria">Categoria</label>
-                                    <select name="categoria" id="categoria" required style="width: 100%; padding: 0.75em; border-radius: 8px; border: 1px solid #ccc;">
-                                        <option value="">Selecione uma categoria</option>
-                                        <option value="consumo_consciente">Consumo Consciente</option>
-                                        <option value="reciclagem">Reciclagem</option>
-                                        <option value="inovacao">Inovação</option>
-                                        <option value="educacao">Educação</option>
-                                        <option value="outros">Outros</option>
-                                    </select>
-                                </div>
-                                <!-- Título -->
-                                <div class="col-12">
-                                    <label for="titulo">Título da prática ou ideia</label>
-                                    <input type="text" name="titulo" id="titulo" placeholder="Título" required style="width: 100%; padding: 0.75em; border-radius: 8px; border: 1px solid #ccc;"/>
-                                </div>
-                                <!-- Descrição -->
-                                <div class="col-12">
-                                    <label for="descricao">Descrição</label>
-                                    <textarea name="descricao" id="descricao" rows="6" placeholder="Conte sobre sua prática ou ideia" required style="width: 100%; padding: 0.75em; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-                                </div>
-                                <!-- Localidade -->
-                                <div class="col-6 col-12-medium">
-                                    <label for="localidade">Localidade (opcional)</label>
-                                    <input type="text" name="localidade" id="localidade" placeholder="Cidade, Estado ou Região" style="width: 100%; padding: 0.75em; border-radius: 8px; border: 1px solid #ccc;"/>
-                                </div>
-                                <!-- Botão -->
-                                <div class="col-12" style="text-align: center; margin-top: 2em;">
-                                    <input type="submit" value="📬 Enviar contribuição" class="button" style="padding: 1em 2em; background-color: #009451; border: none; color: white; border-radius: 10px; font-size: 1.1em; cursor: pointer;"/>
-                                </div>
+                    <div class="row main-row initiative-section">
+                        <!-- Reciclagem -->
+                        <section class="row aln-middle">
+                            <div class="col-6 col-12-medium">
+                                <h2>🌱 Iniciativas Sustentáveis</h2>
+                                <h3>♻️ Reciclagem de Embalagens:</h3>
+                                <p>Através do programa <em>Suvinil Circula</em>, embalagens vazias de tinta e sobras são recolhidas nos pontos de venda parceiros, transportadas por operadores logísticos certificados e encaminhadas para cooperativas de reciclagem. Isso promove a logística reversa e evita o descarte incorreto de resíduos, contribuindo para a economia circular e a redução do impacto ambiental. <br><a href="https://www.basf.com/ar/es/who-we-are/sustainability/sustentabilidad-en-america-del-sul/Sustentabilidad-en-la-Pr-ctica/Hist-rico-de-Casos-de-Sustentabilidad-en-la-Pr-ctica/case-msu-suvinil-circula" target="_blank">[Saiba mais]</a> </p>
                             </div>
-                        </form>
-                        <!-- Mural exibido após envio -->
-                        <div id="mural-postagens" style="margin-top: 3em;"></div>
-                    </section>
-                    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const postsSalvos = JSON.parse(localStorage.getItem('mural') || '[]');
-    postsSalvos.forEach(post => renderPost(post));
-  });
-
-  function adicionarPostagem(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById('nome').value || "Anônimo";
-    const categoria = document.getElementById('categoria').value;
-    const titulo = document.getElementById('titulo').value;
-    const descricao = document.getElementById('descricao').value;
-    const localidade = document.getElementById('localidade').value || "Não informada";
-    const dataEnvio = new Date().toLocaleString('pt-BR');
-
-    const post = { nome, categoria, titulo, descricao, localidade, dataEnvio };
-
-    const mural = JSON.parse(localStorage.getItem('mural') || '[]');
-    mural.push(post);
-    localStorage.setItem('mural', JSON.stringify(mural));
-
-    renderPost(post);
-    document.getElementById('formMural').reset();
-  }
-
-  function renderPost(post) {
-    const div = document.createElement('div');
-    div.style = "background: #ffffff; padding: 1.5em; border-left: 6px solid #009451; margin-bottom: 1.5em; border-radius: 10px;";
-    div.innerHTML = `
-      <h3 style="color:#007b5e;">${post.titulo}</h3>
-      <p><strong>Categoria:</strong> ${post.categoria}</p>
-      <p>${post.descricao}</p>
-      <p><strong>Localidade:</strong> ${post.localidade}</p>
-      <p style="font-size: 0.85em; color: #666;">🗓️ Enviado por <strong>${post.nome}</strong> em ${post.dataEnvio}</p>
-    `;
-    document.getElementById('mural-postagens').prepend(div);
-  }
-</script>
+                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/circula.webp" alt="Reciclagem de embalagens"> </span>
+                            </div>
+                        </section>
+                        <!-- Água -->
+                        <section class="row aln-middle">
+                            <div class="col-6 col-12-medium">
+                                <h3>💧 Redução no Consumo de Água:</h3>
+                                <p>A fábrica da Suvinil em São Bernardo do Campo (SP) implementou melhorias em processos industriais que permitiram reduzir em 29% o consumo de água ao longo de 14 anos. Entre as práticas adotadas estão o reaproveitamento da água de enxágue e tecnologias de produção mais limpas e eficientes. <br><a href="https://www.basf.com/br/pt/who-we-are/sustainability/sustentabilidade-na-america-do-sul/sustentabilidade-na-pratica/2024/O-poder-da-log-stica-reversa-na-sustentabilidade-do-setor-de-tintas-" target="_blank">[Saiba mais]</a> </p>
+                            </div>
+                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/agua.jpg" alt="Redução no consumo de água"> </span>
+                            </div>
+                        </section>
+                        <!-- Resíduos -->
+                        <section class="row aln-middle">
+                            <div class="col-6 col-12-medium">
+                                <h3>🔄 Reaproveitamento de Resíduos:</h3>
+                                <p>Resíduos gerados durante o processo de fabricação, como tintas fora de especificação ou sobras de matérias-primas, são tratados internamente e reprocessados sempre que possível. Essa prática reduz significativamente a geração de lixo industrial e evita o envio para aterros, gerando ganhos ambientais e econômicos.</p>
+                            </div>
+                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/residuo.png" alt="Reaproveitamento de resíduos"> </span>
+                            </div>
+                        </section>
+                        <!-- Energia Renovável -->
+                        <section class="row aln-middle">
+                            <div class="col-6 col-12-medium">
+                                <h3>🔋 Energia Renovável:</h3>
+                                <p>A BASF utiliza certificados de energia renovável (I-REC) para garantir que 100% da eletricidade utilizada em suas fábricas na América do Sul seja proveniente de fontes limpas, como hidrelétricas e eólicas. Isso reduz as emissões de CO₂ associadas à produção e demonstra o compromisso com uma matriz energética sustentável.</p>
+                            </div>
+                            <div class="col-6 col-12-medium"><span class="image fit"> <img src="images/eolica.webp" alt="Uso de energia renovável"> </span>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
             <!-- Footer -->             
@@ -199,7 +157,9 @@
                         <div class="col-4 col-12-medium">
                             <section>
                                 <h2 style="color: #21c189;">Sobre o EcoTintas</h2>
-                                <p>O EcoTintas é uma plataforma educativa e interativa voltada à conscientização sobre práticas sustentáveis na indústria de tintas. Inspirado por empresas como BASF e Suvinil, o projeto conecta teoria e prática por meio de conteúdos, estudos e experiências reais.</p>
+                                <p>
+            O EcoTintas é uma plataforma educativa e interativa voltada à conscientização sobre
+            práticas sustentáveis na indústria de tintas. Inspirado por empresas como BASF e Suvinil, o projeto conecta teoria e prática por meio de conteúdos, estudos e experiências reais. </p>
                                 <footer class="controls"><a href="#sobre" class="button" style="background-color: #21c189; border: none;">Saiba mais</a>
                                 </footer>
                             </section>
@@ -217,28 +177,6 @@
             </div>
         </div>         
         <!-- Scripts -->         
-        <script>
-          document.getElementById('formSugestao').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-
-            fetch('https://ecotintas-backend.onrender.com/sugestao', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ nome, mensagem })
-            })
-            .then(res => res.json())
-            .then(data => {
-              document.getElementById('resposta').innerText = data.mensagem;
-              document.getElementById('formSugestao').reset();
-            })
-            .catch(error => {
-              document.getElementById('resposta').innerText = "Erro ao enviar sugestão.";
-              console.error('Erro:', error);
-            });
-          });
-        </script>
         <script src="assets/js/jquery.min.js"></script>         
         <script src="assets/js/browser.min.js"></script>         
         <script src="assets/js/breakpoints.min.js"></script>         
