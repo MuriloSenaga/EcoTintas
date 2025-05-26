@@ -93,7 +93,7 @@
 
     const post = { nome, categoria, titulo, descricao, localidade, dataEnvio };
 
-    fetch('https://ecotintas-backend.onrender.com/sugestao', {
+    fetch('https://ecotintas-backend.onrender.com/listar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(post)
@@ -247,6 +247,28 @@
             </div>
         </div>         
         <!-- Scripts -->         
+        <script>
+          document.getElementById('formSugestao').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            fetch('https://ecotintas-backend.onrender.com/listar', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ nome, mensagem })
+            })
+            .then(res => res.json())
+            .then(data => {
+              document.getElementById('resposta').innerText = data.mensagem;
+              document.getElementById('formSugestao').reset();
+            })
+            .catch(error => {
+              document.getElementById('resposta').innerText = "Erro ao enviar sugestão.";
+              console.error('Erro:', error);
+            });
+          });
+        </script>
         <script src="assets/js/jquery.min.js"></script>         
         <script src="assets/js/browser.min.js"></script>         
         <script src="assets/js/breakpoints.min.js"></script>         
