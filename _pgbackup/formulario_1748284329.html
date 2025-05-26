@@ -93,7 +93,7 @@
 
     const post = { nome, categoria, titulo, descricao, localidade, dataEnvio };
 
-    fetch('https://ecotintas-backend.onrender.com/listar', {
+    fetch('https://ecotintas-backend.onrender.com/sugestao', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(post)
@@ -126,7 +126,7 @@
     document.getElementById('mural-postagens').prepend(div);
   }
   function carregarPostagens() {
-  fetch('https://ecotintas-backend.onrender.com/listar')
+  fetch('https://ecotintas-backend.onrender.com/sugestoes')
     .then(response => {
       if (!response.ok) throw new Error("Erro ao buscar postagens");
       return response.json();
@@ -253,7 +253,7 @@
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            fetch('https://ecotintas-backend.onrender.com/listar', {
+            fetch('https://ecotintas-backend.onrender.com/sugestao', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ nome, mensagem })
